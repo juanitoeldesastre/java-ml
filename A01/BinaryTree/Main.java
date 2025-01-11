@@ -1,6 +1,8 @@
+
 import java.util.Scanner;
 
 class Nodo {
+
     int valor;
     Nodo izquierda, derecha;
 
@@ -11,6 +13,7 @@ class Nodo {
 }
 
 class ArbolBinario {
+
     private Nodo raiz;
 
     public void insertar(int valor) {
@@ -45,10 +48,21 @@ class ArbolBinario {
 }
 
 public class Main {
+
+    // Método para calcular el factorial de un número
+    public static int factorial(int n) {
+        if (n == 0) { // Caso base
+            return 1;
+        } else { // Caso general
+            return n * factorial(n - 1);
+        }
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         ArbolBinario arbol = new ArbolBinario();
 
+        // Inserción de datos en el árbol
         System.out.println("Ingrese números para el árbol binario (separados por espacio):");
         String[] numeros = scanner.nextLine().split(" ");
 
@@ -58,5 +72,10 @@ public class Main {
 
         System.out.println("\nÁrbol Binario:");
         arbol.mostrar();
+
+        // Calcular el factorial de un número
+        System.out.println("\nIngrese un número para calcular su factorial:");
+        int numero = scanner.nextInt();
+        System.out.println("El factorial de " + numero + " es: " + factorial(numero));
     }
 }
